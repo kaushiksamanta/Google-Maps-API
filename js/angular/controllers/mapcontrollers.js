@@ -1,7 +1,12 @@
-var mapresponse;
-var app = angular.module('myapp', []);
-app.controller('mapcontroller', function($scope, $http) {
-    $http.get("js/cord.js")
-    .success(function (response) {$scope.names = response.data.driver_data;
-    mapresponse=response.data.driver_data});
-});
+var mapRecords;
+var app=angular.module("myapp",['ngRoute']);
+app.config(['$httpProvider', function ($httpProvider) {
+    'use strict';
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+    $httpProvider.defaults.transformRequest = function (data) {
+        if (data === undefined) {
+            return data;
+        }
+        return $.param(data);
+    };
+}]);

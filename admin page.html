@@ -2,6 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 </head>
 <body ng-app="myapp">
@@ -10,40 +11,27 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Drivers Admin Page</a>
     </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/map">Map</a></li>
+        <li><a href="#/drivers">Drivers</a></li>
+    </ul>
   </div>
 </nav>
-<div class="row" ng-controller="mapcontroller">
-  <div class="col-md-6">
-    <table class="table">
-    <thead>
-      <tr>
-        <th>Driver ID</th>
-        <th>Driver Name</th>
-        <th>Phone No.</th>
-        <th>Driver email</th>
-        <th>Status</th>
-        <th>Available</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="success" ng-repeat="x in names">
-        <td>{{x.driver_id}}</td>
-        <td>{{x.user_name}}</td>
-        <td>{{x.phone_no}}</td>
-        <td>{{x.user_email}}</td>
-        <td>{{x.status}}</td>
-        <td>{{x.is_available}}</td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-  <div class="col-md-6" id="googleMap" style="width:600px;height:500px;">
-  </div>
-</div>
+<div ng-view></div>
 <!-- angular js file-->
 <script type="text/javascript" src="js/vendor/angular.min.js"></script>
+<!-- angular route added-->
+<script type="text/javascript" src="js/vendor/angular-route.min.js"></script>
 <!-- map controller added  -->
 <script type="text/javascript" src="js/angular/controllers/mapcontrollers.js"></script>
+<!--routes added -->
+<script type="text/javascript" src="js/angular/routes/route.js"></script>
+<!--factories added -->
+<script type="text/javascript" src="js/vendor/factory.js"></script>
+<!--map directives added -->
+<script type="text/javascript" src="js/angular/directives/map-directive.js"></script>
+<!--controllers added -->
+<script type="text/javascript" src="js/angular/controllers/controller.js"></script>
 <!-- google map api added -->
 <script type="text/javascript" src="js/vendor/map.js"></script>
 </body>

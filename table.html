@@ -1,0 +1,24 @@
+  <div class="container">
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Driver ID</th>
+        <th>Driver Name</th>
+        <th>Phone No.</th>
+        <th>Driver email</th>
+        <th>Status</th>
+        <th>Available</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="success" ng-repeat="x in drivers">
+        <td>{{x.fleet_id}}</td>
+        <td>{{x.username}}</td>
+        <td>{{x.phone}}</td>
+        <td>{{x.email}}</td>
+        <td>{{x.status}}</td>
+        <td>{{x.is_available}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
